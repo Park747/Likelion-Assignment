@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    <title>멋사전용 글자수 세기 프로그램</title>
+</head>
+<body>
+    <h1>글자 수 산정 결과입니다.</h1>
+    <hr id="line1">
+        <div class="main_frame">
+            <div class='text_area'>
+                <p>{{text}}</p>
+            </div>
+            <div class="text_number">
+                <div class="input_text"><p>글자수: {{total_len}}</p></div>
+                <div class="include_blank"><p>공백 제외 글자수: {{no_blank_len}}</p></div>
+                <div class="no_blank"><p>단어 개수: {{word_num}}</p></div>
+            </div>
+        </div>
+    </form>   
+</body>
+</html>
