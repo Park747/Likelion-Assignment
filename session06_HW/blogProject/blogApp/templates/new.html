@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@700&family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+    <title>My Blog</title>
+</head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+<body>
+    <form action="/new" method="post">
+        {% csrf_token %}
+        <main>
+            <h2>WelCome to my Blog!</h2>
+            <div class="title"><p>"Title"</p>
+                <input type="text" name="title" placeholder="Put your text here."/>
+            </div>
+            <div class="categorie"><p>"Category"</p>
+                <select name="category">
+                    <option value="hobby">hobby</option>
+                    <option value="food">food</option>
+                    <option value="programming">programming</option>
+                </select>
+            </div>
+            <div class="content"><p>"Content"</p>
+                <textarea id=area name="content" cols="30" rows="10" placeholder="Put your text here."></textarea>
+                <button id=bt1 type="submit">save</button>
+            </div>
+        </main>
+    </form>
+</body>
+</html>

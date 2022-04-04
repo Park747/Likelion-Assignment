@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@700&family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+    <title>About Details</title>
+</head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}">
+<body>
+    <main>
+        <h2>Details</h2>
+        <div>
+            <h3>Title</h3>
+            <div class="titlezone">{{article_detail.title}}</div>
+        </div>
+        <div>
+            <h3>Content</h3>
+            <div class="contentzone">{{article_detail.content}}</div>
+        </div>
+        <div>
+            <h3>Category</h3>
+            <div class="categoryzone">{{article_detail.category}}</div>
+        </div>
+        <div>
+            <div class="timezone">{{article_detail.time}}</div>
+        </div>
+        <a href="{% url 'list' %}">Go Back</a>
+    </main>
+</body>
+</html>

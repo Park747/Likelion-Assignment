@@ -1,0 +1,48 @@
+body{
+    background-color: aliceblue;
+}
+
+main{
+    position:relative;
+    left:40%;
+    top:100px;
+}
+
+h2{
+    display: inline;
+    color:skyblue;
+    background-color: lightyellow;
+}
+
+a{
+    text-decoration: none;
+    font-weight: 800;
+}
+a:link { 
+    background-color: lightyellow; 
+    color:skyblue;
+}
+
+a:visited { 
+    background-color: lightyellow;
+    color: pink; 
+}
+
+a:hover{
+    color:black;
+    transition:1s;
+}
+
+a:link, a:visited {
+    background-color: lightyellow;
+    color: skyblue;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul{
+    list-style:none;
+    padding-left:0px;
+    }
