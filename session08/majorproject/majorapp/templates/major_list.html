@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>개설 과목 목록</h2>
+    <ol>
+        {% for subject in subjects %}
+        <li>
+            {{ subject.Subject_name }} | {{ subject.Subject_major }} | {{ subject.professor }} | <a href="{% url 'EditSubject' subject.pk %}">수정</a> 
+            <a href="{% url 'delete_subject' subject.pk %}">삭제</a>
+            <br>
+            {{ subject.memo }}
+        </li>
+        {% endfor %} 
+</body>
+</html>
