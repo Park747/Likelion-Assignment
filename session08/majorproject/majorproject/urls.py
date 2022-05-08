@@ -23,11 +23,10 @@ urlpatterns = [
     path('addMajor', AddMajorView.as_view(), name='addMajor'),
     path('home', views.home, name="home" ),
     path('addSubject', AddSubjectView.as_view(), name='addSubject'),
-    path('computer' , views.computer, name='computer'),
     path('EditSubject/<int:pk>', EditSubjectView.as_view(), name='EditSubject'),
     path('delete_subject/<int:post_pk>', views.delete_subject, name='delete_subject'),
-    path('education' , views.education, name='education'),
     path('EditMajor/<int:pk>', EditMajorView.as_view(), name='EditMajor'),
     path('delete_major/<int:post_pk>', views.delete_major, name='delete_major'),
-    path('major_list/<major_name>', views.major_list, name='major_list')
+    path('major_list/<major_name>', views.major_list, name='major_list'),
+    path('', views.index, name='index')
 ]

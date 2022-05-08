@@ -5,27 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+<head>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 <body>
-    <h2>모든 전공</h2>
-    <ul>
-        {% for major in majors %}
-        <li>
-            <a href="{% url 'major_list' major.name %}">{{ major.name }}</a> | <a href="{% url 'EditMajor' major.pk %}">수정</a> 
-            <a href="{% url 'delete_major' major.pk %}">삭제</a>
-        </li>
-        {% endfor %}
-    <a href="{% url 'addMajor' %}">전공 추가</a>
-    <h2>모든 과목</h2>
-    <ol>
-        {% for subject in subjects %}
-        <li>
-            {{ subject.Subject_name }} | {{ subject.Subject_major }} | {{ subject.professor }}
-            <br>
-            {{ subject.memo }}
-        </li>
-        {% endfor %} 
-    </ol>
-    <a href="{% url 'addSubject' %}">과목 추가</a>
+    <div class="majors">
+        <h2>All Majors</h2>
+        <ul>
+            {% for major in majors %}
+            <li>
+                <a href="{% url 'major_list' major.name %}">{{ major.name }}</a> | <a href="{% url 'EditMajor' major.pk %}">Edit</a> 
+                <a href="{% url 'delete_major' major.pk %}">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'addMajor' %}">Add Major</a>
+    </div>
+    <div class="subjects">
+        <h2>All Subjects</h2>
+        <div class="table">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Subject</th><th>Major</th><th>Professor</th><th>Memo</th>
+                    </tr>
+                </thead>
+                {% for subject in subjects %}
+                <tbody>
+                    <tr>
+                        <td>{{ subject.Subject_name }}</td> 
+                        <td>{{ subject.Subject_major }}</td> 
+                        <td>{{ subject.professor }}</td>
+                        <td>{{ subject.memo }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %} 
+            </table>
+        </div>
+        <br>
+        <a href="{% url 'addSubject' %}">Add Subject</a><a href="{% url 'index' %}">Go home</a>
+    </div>
 </body>
 </html>

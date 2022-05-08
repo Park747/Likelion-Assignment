@@ -22,9 +22,6 @@ class AddSubjectView(CreateView):
     template_name = 'addSubject.html'
     success_url = reverse_lazy('home')
 
-def computer(request):
-    subjects= Subject.objects.filter(Subject_major__name='컴퓨터학과')
-    return render(request, 'computer.html', {'subjects' : subjects})
 
 class EditSubjectView(UpdateView):
     model = Subject
@@ -37,10 +34,6 @@ def delete_subject(request, post_pk):
     post.delete()
 
     return redirect('home')
-
-def education(request):
-    subjects= Subject.objects.filter(Subject_major__name='교육학과')
-    return render(request, 'education.html', {'subjects' : subjects})
 
 class EditMajorView(UpdateView):
     model = Major
@@ -58,5 +51,6 @@ def major_list(request, major_name):
     return render(request, 'major_list.html', {'subjects' : subjects})    
 
 
-
+def index(request):
+    return render(request, 'index.html')
 
