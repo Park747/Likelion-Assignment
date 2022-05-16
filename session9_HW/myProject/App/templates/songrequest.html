@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="songrequest_box">
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <div>
+            <input type="text" name="songName" id="song">
+        </div>
+        <div>
+            <label for="song">곡 제목 :</label>
+        </div>
+        <div>
+            <input type="text" name="userName" id="user">
+        </div>
+        <div>
+            <label for="user">신청자명 : </label>
+        </div>
+        <button type="submit">신청곡 제출하기!</button>
+    </form>
+    <a href= "{% url 'home' %}">홈으로 돌아가기</a>
+</div>
+{% endblock content %}
