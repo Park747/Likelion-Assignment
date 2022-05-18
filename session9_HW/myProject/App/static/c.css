@@ -1,0 +1,59 @@
+p{
+    font-family: 'Jua', sans-serif;
+    background-color: skyblue;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+    background-color: blanchedalmond;
+}
+
+.visitorlog_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 50px;
+    font-size: 20px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+input{
+    border:none;
+    background-color: skyblue;
+    font-family: 'Jua', sans-serif;
+}
+
+button{
+    font-family: 'Jua', sans-serif;
+    border:none;
+    background-color: skyblue;
+}
+
+li{
+    list-style: none;
+    font-family: 'Jua', sans-serif;
+
+}
+
+#A{
+    font-size: 15px;
+    background-color: skyblue;
+}
+
+#B{
+    font-size: 15px;
+    background-color: skyblue;
+}
+
+footer>a{
+    background-color: skyblue;
+}

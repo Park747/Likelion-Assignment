@@ -19,6 +19,8 @@ def visitorlog_create(request):
 
 def visitorlog_detail(request, log_pk):
     post_log = visitorLog.objects.get(pk = log_pk)
+    post_log.numberView += 1
+    post_log.save()
     if request.method == "POST":
         commentContent = request.POST["commentContent"]
         Comments.objects.create(
@@ -62,4 +64,18 @@ def delete(request, log_pk):
     delete_log.delete()
     return redirect('home')
 
+def editcomment(request, log_pk, comment_pk):
+    comment = Comments.objects.filter(pk = comment_pk)
+    post_log = visitorLog.objects.get(pk = log_pk)
+    if request.method == "POST":
+        comment.update(
+            commentContent = request.POST['commentContent'],
+            visitorlog = post_log
+        )
+        return redirect('visitorlog_detail', post_log.pk)
+    return render(request, 'editcomment.html' , {'post_log' : post_log})
 
+def deletecomment(request, log_pk, comment_pk):
+    comment = Comments.objects.get(pk = comment_pk)
+    comment.delete()
+    return redirect('visitorlog_detail', log_pk)

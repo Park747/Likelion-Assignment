@@ -25,5 +25,7 @@ urlpatterns = [
     path('showroom', views.showroom, name="showroom"),
     path('songrequest', views.songrequest, name="songrequest"),
     path('delete//<int:log_pk>', views.delete, name="delete"),
-    path('detail/<int:log_pk>/edit', views.edit, name="edit")
+    path('detail/<int:log_pk>/edit', views.edit, name="edit"),
+    path('detail/<int:log_pk>/<int:comment_pk>/editcomment', views.editcomment, name="editcomment"),
+    path('detail/<int:log_pk>/<int:comment_pk>/deletecomment', views.deletecomment, name="deletecomment")
 ]

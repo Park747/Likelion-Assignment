@@ -16,9 +16,9 @@
         <p>방문자명 : {{post_log.visitorName}}</p>
     </div>
     <div class="Log">
-        <p>"{{post_log.visitorLog|linebreaksbr}}"</p>
+        <p>"{{post_log.visitorLog}}"</p>
     </div>
-    <div class="Date">
+    <div class="">
         <p>방문날짜 : {{post_log.visitedDate}}</p>
     </div>
     <div class="Views">
@@ -30,14 +30,12 @@
     {% for comment in post_log.comments.all %}
     <ul>
         <li>{{ comment.commentContent }}</li>
-        <a id='A' href="{% url 'editcomment' post_log.pk comment.pk %}">댓글 수정</a>
-        <a id='B' href="{% url 'deletecomment' post_log.pk comment.pk %}">댓글 삭제</a>
     </ul>
     {% endfor %}
     <form method="POST" action="">
         {% csrf_token %}
-        <input type="text" name="commentContent" placeholder="댓글을 입력하세요"> 
-        <button type="submit">댓글작성</button>
+        <input type="text" name="commentContent" placeholder="수정할 댓글을 입력하세요"> 
+        <button type="submit">댓글수정</button>
     </form>
     <footer>
         <a href="{% url 'edit' post_log.pk %}">방명록 수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;

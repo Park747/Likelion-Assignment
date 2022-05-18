@@ -3,36 +3,36 @@
 {% block css %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
-{% endblock %}
-
-
+{% endblock css %}
 {% block title %}
-<h1>우리집에 온 걸 환영해~</h1>
+<h1>견우네 집 방명록</h1>
 {% endblock title %}
 
 {% block content %}
 
-<div class="visitorlog_box">
+<div class="visitor_box">
     {% if not visitorlogs %}
     <p>아직 방명록이 없네요!</p>
     {% endif %}
     {% for visitorlog in visitorlogs %}
         <div class = "visitorlog_wrapper">
             <div class = "visitorlog_title">
-                "{{visitorlog.title}}"
+                "{{visitorlog.title}}" <span>-{{visitorlog.visitorName}}</span>
                 </div>
             <div class = "visitorlog_content">
-                "{{visitorlog.content}}"
+                {{visitorlog.visitorLog|linebreaksbr}}
             </div>
             <div class = "detail_link">
                 <a href="{% url 'visitorlog_detail' visitorlog.pk %}">
-                자세히 보기
-                </a>
+                <span>자세히 보기</span></a>&nbsp;&nbsp;<span>조회수 : {{visitorlog.numberView}}</span>
+                
             </div>
         </div>
     </a>
     {% endfor %}
-    <a id="post-button" href="{% url 'visitorlog_create' %}">방명록 쓰러 가기</a>
-</div>
+    <div class="button">
+        <a id="post-button" href="{% url 'visitorlog_create' %}">방명록 쓰러 가기</a>
+    </div>    
+    </div>
 
 {% endblock content %}

@@ -2,7 +2,7 @@
 
 {% block css %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'd.css' %}">
 {% endblock %}
 
 
@@ -14,29 +14,27 @@
 <div class="visitorlog_box">
     <form method="POST" action="" >
         {% csrf_token %}
-        <div>
-            <input type="text" name="visitorName" id="NAME">
+        <div class="visitorlogsubmit">
+            <div>
+                <label for="NAME">방문자명 : </label>
+                <input type="text" name="visitorName" id="NAME">
+            </div>
+            <div>
+                <label for="TITLE">방명록 제목 : </label>
+                <input type="text" name="title" id="TITLE">
+            </div>
+            <div>
+                <textarea name="visitorLog" cols="50" rows="20" id="Log" placeholder="수정할부분 수정해서 써주세요!"></textarea>
+            </div>
+            <div>
+                <label for="DATE">방문날짜 : </label>
+                <input type="date" name="visitedDate" id="DATE">
+            </div>
+            <button type="submit">방명록 수정하기!</button>
         </div>
-        <div>
-            <label for="NAME">방문자명 : </label>
-        </div>
-        <div>
-            <input type="text" name="title" id="TITLE">
-        </div>
-        <div>
-            <label for="TITLE">방명록 제목 : </label>
-        </div>
-        <div>
-            <textarea name="visitorLog" cols="50" rows="20" id="Log" placeholder="수정할 내용을 입력하세요"></textarea>
-        </div>
-        <div>
-            <input type="date" name="visitedDate" id="DATE">
-        </div>
-        <div>
-            <label for="DATE">방문날짜 : </label>
-        </div>
-        <button type="submit">방명록 기록하기!</button>
     </form>
+</div>
+<div class="return">
     <a href= "{% url 'home' %}">홈으로 돌아가기</a>
 </div>
 {% endblock content %}
