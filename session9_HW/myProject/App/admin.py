@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import visitorLog, Comments, songRequest
+from .models import visitorLog, Comments, songRequest, User
 # Register your models here.
 
 @admin.register(visitorLog)

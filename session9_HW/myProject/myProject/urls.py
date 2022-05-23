@@ -27,5 +27,8 @@ urlpatterns = [
     path('delete//<int:log_pk>', views.delete, name="delete"),
     path('detail/<int:log_pk>/edit', views.edit, name="edit"),
     path('detail/<int:log_pk>/<int:comment_pk>/editcomment', views.editcomment, name="editcomment"),
-    path('detail/<int:log_pk>/<int:comment_pk>/deletecomment', views.deletecomment, name="deletecomment")
+    path('detail/<int:log_pk>/<int:comment_pk>/deletecomment', views.deletecomment, name="deletecomment"),
+    path('login', views.login, name="login"),
+    path('logout', views.logout, name="logout"),
+    path('signup', views.signup, name="signup")
 ]

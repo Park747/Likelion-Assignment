@@ -29,7 +29,7 @@
     {% endif %}
     {% for comment in post_log.comments.all %}
     <ul>
-        <li>{{ comment.commentContent }}</li>
+        <li>{{ comment.commentName }} : {{ comment.commentContent }}</li>
     </ul>
     {% endfor %}
     <form method="POST" action="">
