@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'loading.css' %}">
+{% endblock css %}
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+<div class="spinner-border" id="loading" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+{% endblock content %}
+{% block script %}
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    var showroom = "{% url 'showroom' %}"
+    $(document).ready(function(){
+        setTimeout(function(){
+            if(window.location == 'http://127.0.0.1:8000/loading');
+            {
+                window.location.href='showroom';}
+            },1000)
+        })
+</script>
+{% endblock script %}
