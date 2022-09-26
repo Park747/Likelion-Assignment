@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@700&family=Noto+Serif+KR:wght@500&display=swap" rel="stylesheet">
+    <title>List</title>
+</head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'list.css' %}">
+<body>
+    <main>
+        <h2>Main List</h2>
+        <ul>
+            {% for article in articles %}
+            <li>
+                <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <footer>
+            <div><a href="{% url 'new' %}">Go to add</a></div>
+            <div><a href="{% url 'hobby' %}">hobby</a><p>({{hobby_category|length}})</p></div>
+            <div><a href="{% url 'food' %}">food</a><p>({{food_category|length}})</p></div>
+            <div><a href="{% url 'programming' %}">programming</a><p>({{programming_category|length}})</p></div>
+        </footer>    
+        </main>
+</body>
+</html>

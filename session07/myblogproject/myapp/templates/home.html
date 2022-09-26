@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="do_list">
+        <div class="h1"><h1>To Do List</h1></div>
+        <ul>
+            {%	for	post in	posts	%}
+                <a class="list" href = "{% url 'detail' post.pk %}"><li>{{ post.title }}</li></a><p>D-day:&nbsp;{{ post.deadline|timeuntil:today }}</p>  <!--a태그에서 url로 넘어가는데 , 첫번째 파라미터는 urls.py에서 정의한 name이고, 두번쨰 post.pk는 경로변수로 넘겨준다. -->
+            {% endfor %}
+        </ul>
+        <a href="{%	url 'new' %}">Add List</a>
+    </div>    
+</body>
+</html>

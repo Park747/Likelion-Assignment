@@ -1,0 +1,32 @@
+body{
+    background-color: antiquewhite;
+}
+h1{
+    font-family: 'Cormorant Garamond', serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+}
+
+.go:link{
+    text-decoration: none;
+    color: black;
+    font-size: 100px;
+    padding: 10px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.go:visited{
+    color: black;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.go:hover{
+    color:red;
+}

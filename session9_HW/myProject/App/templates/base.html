@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'basecss.css' %}">
+    {% block css %}
+    {% endblock css %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Jua&display=swap" rel="stylesheet">    
+    <title>Visitorlog</title>
+</head>
+<body>
+    <div class = 'title'>
+        {% block title %}
+        {% endblock title %}
+    </div>
+    <nav>
+        <div>
+            <a id="showroom" href="{% url 'loading' %}">집 구경하기</a>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/w00_p/">방문 예약하기(DM)</a>
+        </div>
+        <div>
+            <a href="{% url 'songrequest' %}">신청곡 제출하기</a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/channel/UCgGW_27DWhKKEQRuyvRi30g">피아노 듣기</a>
+        </div>
+        {% if user.is_authenticated %}
+        <div>
+            <a href="{% url 'logout' %}">로그아웃</a>
+        </div>
+        <div>
+            <a href="{% url 'mypage' user.pk %}">마이페이지</a>
+        </div>
+        {% else %}
+        <div>
+            <a href="{% url 'signup' %}">방문객 등록</a>
+        </div>
+        <div>
+            <a href="{% url 'login' %}">로그인</a>
+        </div>
+        {% endif %}
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        function clickedBtn(){
+            showLoading();
+            setTimeout("hideLoading()",4000);
+        }
+        
+        function showLoading(){
+            $("#loading").show();
+        }
+
+        function hideLoading(){
+            $("#loading").hide();
+        }
+
+        const detail = document.querySelector("#showroom");
+        detail.addEventListener("click", clickedBtn);
+    </script>
+    {% block script %}
+    {% endblock script %}
+</body>
+</html>

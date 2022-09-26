@@ -1,0 +1,39 @@
+.signup_box{
+    font-family: 'Jua', sans-serif;
+    margin: 30px 50px;
+}
+
+
+input{
+    border:none;
+    background-color:blanchedalmond;
+    margin: 20px;
+}
+
+.return{
+    margin-top: 40px;
+
+}
+
+button{
+    background-color: skyblue;
+    font-family: 'Jua', sans-serif;
+    border:none;
+    margin-top: 30px;
+
+}
+
+.signup_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aliceblue;
+    position: relative;
+    top: 130px;
+}
+
+button:hover{
+    color: white;
+}
+

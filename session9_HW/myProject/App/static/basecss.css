@@ -1,0 +1,34 @@
+h1{
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+    margin:21px;
+    background-color: blanchedalmond;
+}
+
+a:link{
+    text-decoration: none;
+    font-family: 'Jua', sans-serif;
+    color: black;
+    font-size: 30px;
+}
+
+span{
+    font-family: 'Jua', sans-serif;
+    background-color: skyblue;
+    font-size: 20px;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    color: white;
+}
+
+nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: skyblue;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'edit.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="{{ post.title }}">
+        </div>
+        <div>
+            <label for="content">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10" >{{ post.content }}</textarea>
+        </div>
+        <div>
+            <label for="deadline">Deadline</label>
+            <input type="date" name="deadline" id="deadline"></input>
+        </div>
+            <button type="submit">edit</button>
+    </form>
+    
+</body>
+</html>
